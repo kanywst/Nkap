@@ -6,6 +6,7 @@ import os
 import string
 import argparse
 import shutil
+import appdirs
 import yaml
 
 # Globals
@@ -17,19 +18,21 @@ def _init():
 	global global_default
 
 	appname = 'nkap'
-	rootdir = os.path.join(os.path.dirname(os.path.realpath(__file__)),"config")
-	config_dir = os.path.abspath("config")
+	rootdir = os.path.dirname(os.path.realpath(__file__))
+	default_config_dir = os.path.join(rootdir,"config")
+	print("default_config_dir:",default_config_dir)
+	config_dir = appdirs.user_config_dir(appname)
 	service_profile_file = os.path.join(config_dir,"service-profile.yml")
 	global_default_file = os.path.join(config_dir,"global-default.yml")
 
 	if not os.path.exists(config_dir):
 		os.makedirs(config_dir,exist_ok=True)
 		shutil.copy(
-			os.path.join(rootdir,"service-profile.yml"),
+			os.path.join(default_config_dir,"service-profile.yml"),
 			service_profile_file,
 		)
 		shutil.copy(
-			os.path.join(rootdir,"global-default.yml"),
+			os.path.join(default_config_dir,"global-default.yml"),
 			global_default_file
 		)
 

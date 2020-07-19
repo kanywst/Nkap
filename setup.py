@@ -3,6 +3,9 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+def _requires_from_file(filename):
+	return open(filename).read().splitlines()
+
 setuptools.setup(
     name="Nkap",
     version="1.0.0",
@@ -13,6 +16,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/kanywst/nkap",
     packages=setuptools.find_packages(),
+    install_requires=_requires_from_file('requirements.txt'),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
