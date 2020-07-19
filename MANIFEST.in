@@ -1,1 +1,1 @@
-include src/nkap/config/*.yml
+include nkap/config/*.yml
