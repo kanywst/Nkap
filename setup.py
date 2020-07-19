@@ -24,7 +24,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     entry_points = {
-        'console_scripts': ['src.nkap = nkap.nkap:main']
+        'console_scripts': ['nkap = src.nkap.nkap:main']
     },
     python_requires='>=3.6',
 )
