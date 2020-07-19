@@ -1,1 +1,1 @@
-recursive-include src/nkap/config/*
+recursive-include src *
