@@ -15,7 +15,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/kanywst/nkap",
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(exclude=('tests','docs')),
     include_package_data=True,
     install_requires=_requires_from_file('requirements.txt'),
     classifiers=[
@@ -24,7 +24,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     entry_points = {
-        'console_scripts': ['nkap = src.nkap.nkap:main']
+        'console_scripts': ['nkap = nkap.nkap:main']
     },
     python_requires='>=3.6',
 )

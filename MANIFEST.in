@@ -1,1 +1,1 @@
-include nkap/config/*.yml
+recursive-include src *
