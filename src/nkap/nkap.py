@@ -20,7 +20,6 @@ def _init():
 	appname = 'nkap'
 	rootdir = os.path.dirname(os.path.realpath(__file__))
 	default_config_dir = os.path.join(rootdir,"config")
-	print("default_config_dir:",default_config_dir)
 	config_dir = appdirs.user_config_dir(appname)
 	service_profile_file = os.path.join(config_dir,"service-profile.yml")
 	global_default_file = os.path.join(config_dir,"global-default.yml")
